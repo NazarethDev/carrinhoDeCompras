@@ -1,0 +1,12 @@
+{
+  "name": "06-carrinhodecompras",
+  "version": "1.0.0",
+  "description": "Projeto do bootcamp Dio - carrinho de compras com node.js",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lorran Nazareth",
+  "license": "ISC"
+}
