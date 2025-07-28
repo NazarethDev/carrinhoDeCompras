@@ -6,9 +6,22 @@ async function addItem(userCart, item) {
     userCart.push(item);
 };
 
+//aumenta em uma unidade o atributo quantidade da Array
+async function addItemUnity(cart, item) {
+    const indexFound = cart.findIndex((product) => product.name === item.name)
+
+    if (indexFound <0 ) {
+        console.log("O item não foi encontrado :(");
+        console.log("Tente novamente");
+        return;
+    };
+
+    cart[indexFound].quantity += 1;
+};
+
 //deletar item do carrinho
 async function deleteItem(userCart, item) {
-    const index = userCart.findIndex((item) => item.name === item);
+    const index = userCart.findIndex((product) => product.name === item.name);
     if (index !== -1) {
         userCart.splice(index, 1);
     };
@@ -35,8 +48,8 @@ async function removeItem(cart, item) {
 };
 
 //calcular total do carrinho
-async function calculateTotal(userCart) {
-    const result = userCart.reduce((total, item) => total + item.subtotal(), 0);
+async function calculateTotal(cart) {
+    const result = cart.reduce((total, item) => total + item.subtotal(), 0);
     console.log("Shopping cart total is: " + result);
 };
 
@@ -53,5 +66,6 @@ export {
     calculateTotal,
     deleteItem,
     removeItem,
-    displayCart
+    displayCart,
+    addItemUnity
 }
