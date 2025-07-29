@@ -10,7 +10,7 @@ async function addItem(userCart, item) {
 async function addItemUnity(cart, item) {
     const indexFound = cart.findIndex((product) => product.name === item.name)
 
-    if (indexFound <0 ) {
+    if (indexFound < 0) {
         console.log("O item não foi encontrado :(");
         console.log("Tente novamente");
         return;
